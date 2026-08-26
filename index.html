@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Learning Kemensos RI</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --text-color: #333;
+            --card-bg: #fff;
+            --header-bg: #0056b3;
+            --header-text: #fff;
+            --border-color: #e0e0e0;
+            --badge-bg: #e9ecef;
+            --badge-text: #495057;
+        }
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --card-bg: #2d2d2d;
+            --header-bg: #111;
+            --header-text: #e0e0e0;
+            --border-color: #444;
+            --badge-bg: #444;
+            --badge-text: #ccc;
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            margin: 0; 
+            transition: all 0.3s ease; 
+        }
+        header { 
+            background-color: var(--header-bg); 
+            color: var(--header-text); 
+            padding: 1.2rem 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 1.6rem; letter-spacing: 0.5px; }
+        button.theme-toggle { 
+            background: transparent; 
+            border: 1px solid var(--header-text); 
+            color: var(--header-text); 
+            padding: 0.5rem 1rem; 
+            cursor: pointer; 
+            border-radius: 20px; 
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        button.theme-toggle:hover { 
+            background: var(--header-text); 
+            color: var(--header-bg); 
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 2rem auto; 
+            padding: 0 1rem; 
+            display: grid; 
+            grid-template-columns: 2fr 1.2fr; 
+            gap: 2rem; 
+        }
+        .card { 
+            background-color: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            padding: 1.5rem; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+        }
+        .card h2 { 
+            margin-top: 0; 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 0.8rem; 
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .timeline-item { 
+            border-left: 3px solid var(--header-bg); 
+            padding-left: 1.5rem; 
+            margin-bottom: 1.5rem; 
+            position: relative; 
+        }
+        .timeline-item::before { 
+            content: ''; 
+            position: absolute; 
+            left: -8px; 
+            top: 0; 
+            width: 13px; 
+            height: 13px; 
+            background: var(--header-bg); 
+            border-radius: 50%; 
+        }
+        .timeline-date { font-size: 0.9rem; color: #888; margin-bottom: 0.3rem; font-weight: 500;}
+        .timeline-item h3 { margin: 0 0 0.4rem 0; font-size: 1.15rem;}
+        .timeline-item p { margin: 0.5rem 0 0 0; font-size: 0.95rem; opacity: 0.9;}
+        
+        .status { padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+        .status-done { background-color: #d4edda; color: #155724; }
+        .status-ongoing { background-color: #fff3cd; color: #856404; }
+        .status-future { background-color: #d1ecf1; color: #0c5460; }
+        
+        [data-theme="dark"] .status-done { background-color: #1e4620; color: #d4edda; }
+        [data-theme="dark"] .status-ongoing { background-color: #5c4e16; color: #fff3cd; }
+        [data-theme="dark"] .status-future { background-color: #17454e; color: #d1ecf1; }
+
+        .profile-list { list-style: none; padding: 0; margin: 0; }
+        .profile-item { 
+            display: flex; 
+            align-items: center; 
+            padding: 1rem 0; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+        .profile-item:last-child { border-bottom: none; padding-bottom: 0;}
+        .avatar { 
+            width: 45px; 
+            height: 45px; 
+            border-radius: 50%; 
+            background-color: var(--header-bg); 
+            color: #fff; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: bold; 
+            margin-right: 1rem; 
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .profile-info h4 { margin: 0 0 0.2rem 0; font-size: 1.05rem; }
+        .profile-info p { margin: 0; font-size: 0.85rem; opacity: 0.8; }
+        
+        @media (max-width: 800px) { 
+            .container { grid-template-columns: 1fr; } 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎓 e-Learning Kemensos RI</h1>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Light / Night</button>
+    </header>
+    
+    <div class="container">
+        <!-- Kolom Kiri: Jadwal Course -->
+        <div class="card">
+            <h2>📅 Jadwal Course (Timeline)</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">15 Juli 2026 - 25 Juli 2026</div>
+                <h3>Pengantar Pekerjaan Sosial Dasar</h3>
+                <span class="status status-done">✓ Selesai</span>
+                <p>Materi dasar pelayanan kesejahteraan sosial bagi petugas lapangan dan relawan.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">10 Agustus 2026 - 15 Agustus 2026</div>
+                <h3>Manajemen Data Terpadu Kesejahteraan Sosial (DTKS)</h3>
+                <span class="status status-done">✓ Selesai</span>
+                <p>Integrasi, verifikasi, dan validasi data kemiskinan berbasis sistem informasi.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">20 Agustus 2026 - 5 September 2026</div>
+                <h3>Sistem Informasi Manajemen Sekolah Rakyat</h3>
+                <span class="status status-ongoing">▶ Sedang Berlangsung</span>
+                <p>Pelatihan admin, QA, dan User Acceptance Testing (UAT) untuk portal sekolahrakyat.kemensos.go.id.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">10 September 2026 - 20 September 2026</div>
+                <h3>Pelatihan QA & Testing Otomatis</h3>
+                <span class="status status-future">⏳ Akan Datang</span>
+                <p>Otomatisasi pengujian perangkat lunak menggunakan n8n, JMeter, dan integrasi Laravel.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">1 Oktober 2026 - 15 Oktober 2026</div>
+                <h3>Manajemen Resiko dalam Pelayanan Sosial</h3>
+                <span class="status status-future">⏳ Akan Datang</span>
+                <p>Prosedur mitigasi resiko dan penanganan darurat di lingkungan kerja Kementerian Sosial.</p>
+            </div>
+        </div>
+
+        <!-- Kolom Kanan: Profil -->
+        <div>
+            <!-- Random Profil 5 Teacher -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h2>👨‍🏫 Profil Pengajar (Teacher)</h2>
+                <ul class="profile-list">
+                    <li class="profile-item"><div class="avatar">BS</div><div class="profile-info"><h4>Budi Santoso</h4><p>Widyaiswara Ahli Utama</p></div></li>
+                    <li class="profile-item"><div class="avatar">RW</div><div class="profile-info"><h4>Rina Wijaya</h4><p>Instruktur Sistem Informasi / QA</p></div></li>
+                    <li class="profile-item"><div class="avatar">AP</div><div class="profile-info"><h4>Agus Prasetyo</h4><p>Spesialis Data DTKS</p></div></li>
+                    <li class="profile-item"><div class="avatar">SA</div><div class="profile-info"><h4>Siti Aminah</h4><p>Pekerja Sosial Ahli Madya</p></div></li>
+                    <li class="profile-item"><div class="avatar">HS</div><div class="profile-info"><h4>Hendra Setiawan</h4><p>Ahli Infrastruktur & Server Ubuntu</p></div></li>
+                </ul>
+            </div>
+
+            <!-- Random Profil 5 Peserta Diklat -->
+            <div class="card">
+                <h2>🧑‍🎓 Peserta Diklat (Student)</h2>
+                <ul class="profile-list">
+                    <li class="profile-item"><div class="avatar" style="background-color:#28a745">JA</div><div class="profile-info"><h4>Joko Anwar</h4><p>Dinas Sosial Provinsi Jabar</p></div></li>
+                    <li class="profile-item"><div class="avatar" style="background-color:#28a745">SM</div><div class="profile-info"><h4>Sri Mulyani</h4><p>Pendamping PKH Nasional</p></div></li>
+                    <li class="profile-item"><div class="avatar" style="background-color:#28a745">AS</div><div class="profile-info"><h4>Andi Syahputra</h4><p>Admin Panti Sosial Taruna Jaya</p></div></li>
+                    <li class="profile-item"><div class="avatar" style="background-color:#28a745">DL</div><div class="profile-info"><h4>Dewi Lestari</h4><p>Anggota Tagana (Taruna Siaga Bencana)</p></div></li>
+                    <li class="profile-item"><div class="avatar" style="background-color:#28a745">WH</div><div class="profile-info"><h4>Wahyu Hidayat</h4><p>Pusdatin Kemensos RI</p></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        }
+    </script>
+</body>
+</html>
