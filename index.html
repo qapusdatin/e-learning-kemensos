@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Learning Kemensos RI - Platform Pembelajaran Digital Terintegrasi</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo-kemensos.svg">
+    
     <!-- Fonts: Inter & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,45 +72,52 @@
             <div class="hidden sm:flex items-center gap-4 text-[11px]">
                 <a href="https://kemensos.go.id" target="_blank" class="hover:text-white transition-colors">Portal Kemensos</a>
                 <span>•</span>
+                <a href="#sdm-kesos" class="hover:text-white transition-colors">Sasaran SDM Kesos</a>
+                <span>•</span>
                 <a href="#kursus" class="hover:text-white transition-colors">Modul Pelatihan</a>
             </div>
         </div>
     </div>
 
-    <!-- Main Navigation -->
+    <!-- Main Navigation (Rata Kanan) -->
     <nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
+                <!-- Logo Kementerian Sosial RI (Lokal Direktori) -->
                 <a href="https://e-learning.kemensos.go.id/" class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-kemensos-blue flex items-center justify-center text-white font-bold text-lg shadow-sm">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
+                    <img src="assets/logo-kemensos.svg" 
+                         alt="Logo Kementerian Sosial RI" 
+                         class="h-10 w-auto object-contain">
                     <div class="flex flex-col">
                         <span class="font-heading font-bold text-lg tracking-tight text-slate-900 dark:text-white leading-none">e-Learning</span>
                         <span class="text-[10px] font-semibold tracking-wider text-slate-500 dark:text-slate-400 mt-1 uppercase">Kementerian Sosial RI</span>
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Menu -->
-                <div class="hidden md:flex items-center space-x-1">
-                    <a href="#beranda" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-kemensos-blue dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Beranda</a>
-                    <a href="#fitur" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-kemensos-blue dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Panduan LMS</a>
-                    <a href="#kursus" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-kemensos-blue dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Modul PKH</a>
+                <!-- Container Kanan: Menu Navigasi & Aksi -->
+                <div class="flex items-center gap-6">
+                    <!-- Desktop Navigation Menu -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#beranda" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-kemensos-blue dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Beranda</a>
+                        <a href="#sdm-kesos" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-kemensos-blue dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">SDM Kesos</a>
+                        <a href="#fitur" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-kemensos-blue dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Panduan LMS</a>
+                        <a href="#kursus" class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-kemensos-blue dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Modul PKH</a>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex items-center gap-3">
+                        <button id="themeToggle" class="p-2 rounded-md text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Ubah Mode Tampilan">
+                            <i class="fas fa-sun text-base hidden dark:block text-amber-400"></i>
+                            <i class="fas fa-moon text-base block dark:hidden"></i>
+                        </button>
+
+                        <a href="https://e-learning.kemensos.go.id/login/index.php" target="_blank" class="px-4 py-2 rounded-md bg-kemensos-blue hover:bg-blue-900 text-white text-sm font-semibold transition-colors shadow-sm flex items-center gap-2">
+                            <span>LOGIN</span>
+                            <i class="fas fa-sign-in-alt text-xs"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Actions -->
-                <div class="flex items-center gap-3">
-                    <button id="themeToggle" class="p-2 rounded-md text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Ubah Mode Tampilan">
-                        <i class="fas fa-sun text-base hidden dark:block text-amber-400"></i>
-                        <i class="fas fa-moon text-base block dark:hidden"></i>
-                    </button>
-
-                    <a href="https://e-learning.kemensos.go.id/" target="_blank" class="px-4 py-2 rounded-md bg-kemensos-blue hover:bg-blue-900 text-white text-sm font-semibold transition-colors shadow-sm flex items-center gap-2">
-                        <span>Masuk Portal</span>
-                        <i class="fas fa-sign-in-alt text-xs"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </nav>
@@ -129,16 +139,16 @@
                     </h1>
 
                     <p class="text-base sm:text-lg text-slate-300 mb-8 max-w-2xl leading-relaxed">
-                        Pengembangan kompetensi Aparatur Sipil Negara (ASN) dan Tenaga Pendamping Sosial secara terpadu dan berkelanjutan di lingkungan Kementerian Sosial RI.
+                        Pengembangan kompetensi terpadu dan berkelanjutan bagi <strong class="text-white">Aparatur Sipil Negara (ASN) maupun Non-ASN</strong> di lingkungan Kementerian Sosial RI sesuai Peraturan Menteri Sosial Nomor 7 Tahun 2026[cite: 5].
                     </p>
 
                     <div class="flex flex-wrap gap-4 items-center">
-                        <a href="https://e-learning.kemensos.go.id/" target="_blank" class="px-6 py-3 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-colors shadow-md flex items-center gap-2">
+                        <a href="https://e-learning.kemensos.go.id/login/index.php" target="_blank" class="px-6 py-3 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-colors shadow-md flex items-center gap-2">
                             <span>Akses e-Learning</span>
                             <i class="fas fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="#fitur" class="px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm transition-colors">
-                            Panduan Penggunaan
+                        <a href="#sdm-kesos" class="px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm transition-colors">
+                            Sasaran SDM Kesos
                         </a>
                     </div>
                 </div>
@@ -162,15 +172,15 @@
                                  class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 opacity-90">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
                             
-                            <!-- Overlay Label -->
+                            <!-- Overlay Label dengan Logo Resmi (Lokal Direktori) -->
                             <div class="absolute bottom-4 left-4 right-4 p-3 rounded-lg bg-slate-900/90 backdrop-blur border border-white/10 flex items-center justify-between">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded bg-emerald-600/20 text-emerald-400 flex items-center justify-center">
-                                        <i class="fas fa-user-graduate text-sm"></i>
-                                    </div>
+                                    <img src="assets/logo-kemensos.svg" 
+                                         alt="Logo Kemensos" 
+                                         class="w-7 h-7 object-contain">
                                     <div>
-                                        <p class="text-xs font-bold text-white">Diklat Peningkatan Kapasitas</p>
-                                        <p class="text-[10px] text-slate-400">Modul Terintegrasi SDM PKH</p>
+                                        <p class="text-xs font-bold text-white">Sasaran ASN & Non-ASN</p>
+                                        <p class="text-[10px] text-slate-400">Standar Permensos No. 7 Tahun 2026</p>
                                     </div>
                                 </div>
                                 <span class="px-2.5 py-1 rounded bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-[10px] font-bold">Resmi</span>
@@ -183,53 +193,205 @@
         </div>
     </section>
 
-    <!-- Features Section (Tahapan Pembelajaran) -->
-    <section id="fitur" class="py-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <!-- SDM Kesos Section (Permensos No. 7 Tahun 2026) -->
+    <section id="sdm-kesos" class="py-16 bg-slate-100 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12">
-                <span class="text-xs font-bold tracking-wider text-kemensos-blue dark:text-blue-400 uppercase">Prosedur Pembelajaran</span>
-                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Tahapan Kegiatan Pelatihan</h2>
+                <span class="text-xs font-bold tracking-wider text-kemensos-blue dark:text-blue-400 uppercase">Sasaran Peserta Pembelajaran</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">
+                    Sumber Daya Manusia di Bidang Kesejahteraan Sosial (ASN & Non-ASN)
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-3xl">
+                    Berdasarkan <strong>Peraturan Menteri Sosial Nomor 7 Tahun 2026</strong>, sasaran pengembangan kompetensi e-learning ditujukan bagi 4 (empat) jenis pilar sosial berikut[cite: 5]:
+                </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Step 1 -->
-                <div class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col justify-between">
-                    <div>
-                        <div class="w-8 h-8 rounded bg-kemensos-blue text-white font-bold text-sm flex items-center justify-center mb-4">1</div>
-                        <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">Pre-Test & Orientasi</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Mengikuti pengarahan teknis dan menyelesaikan ujian awal untuk mengukur pemahaman dasar.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Pillar 1 -->
+                <div class="p-6 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-blue-50 dark:bg-blue-950 text-kemensos-blue dark:text-blue-400 font-bold flex items-center justify-center flex-shrink-0 text-xl">
+                        <i class="fas fa-user-shield"></i>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=400" alt="Pre-Test & Orientasi" class="w-full h-24 object-cover rounded border border-slate-200 dark:border-slate-700 opacity-90">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">Tenaga Kesejahteraan Sosial (TKS)</h3>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">ASN & Non-ASN</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Seseorang yang dididik dan dilatih secara profesional untuk melaksanakan tugas pelayanan dan penanganan masalah sosial, baik yang berstatus Aparatur Sipil Negara (PNS/PPPK) maupun dari unsur masyarakat (pendamping sosial non-ASN)[cite: 5]. Tugas utamanya adalah memberikan pelayanan kesejahteraan sosial langsung kepada Pemerlu Pelayanan Kesejahteraan Sosial (PPKS)[cite: 5].
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col justify-between">
-                    <div>
-                        <div class="w-8 h-8 rounded bg-kemensos-blue text-white font-bold text-sm flex items-center justify-center mb-4">2</div>
-                        <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">Pembelajaran Modul</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Mempelajari materi teks, video, serta mengonfirmasi penyelesaian di setiap topik.</p>
+                <!-- Pillar 2 -->
+                <div class="p-6 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 font-bold flex items-center justify-center flex-shrink-0 text-xl">
+                        <i class="fas fa-user-check"></i>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400" alt="Pembelajaran Modul" class="w-full h-24 object-cover rounded border border-slate-200 dark:border-slate-700 opacity-90">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">Pekerja Sosial (Peksos)</h3>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">ASN & Non-ASN</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Seseorang yang memiliki pengetahuan, keterampilan, dan nilai praktik pekerjaan sosial, serta telah lulus uji kompetensi dan memperoleh Sertifikat Kompetensi beserta Surat Tanda Registrasi (STR)[cite: 5]. Peksos bertugas melaksanakan Praktik Pekerjaan Sosial profesional untuk mencegah disfungsi sosial serta memulihkan fungsi sosial individu, keluarga, kelompok, dan masyarakat[cite: 5].
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Step 3 -->
-                <div class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col justify-between">
-                    <div>
-                        <div class="w-8 h-8 rounded bg-kemensos-blue text-white font-bold text-sm flex items-center justify-center mb-4">3</div>
-                        <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">Evaluasi & Post-Test</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Mengerjakan kuis evaluasi setiap bab dan menyelesaikan ujian akhir sesuai standar kriteria ketuntasan.</p>
+                <!-- Pillar 3 -->
+                <div class="p-6 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 font-bold flex items-center justify-center flex-shrink-0 text-xl">
+                        <i class="fas fa-hands-helping"></i>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80&w=400" alt="Evaluasi & Post-Test" class="w-full h-24 object-cover rounded border border-slate-200 dark:border-slate-700 opacity-90">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">Relawan Sosial</h3>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">Masyarakat / Non-ASN</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Seseorang dan/atau kelompok masyarakat (baik berlatar belakang pekerjaan sosial maupun bukan) yang melaksanakan kegiatan penyelenggaraan kesejahteraan sosial atas kehendak sendiri dengan atau tanpa imbalan[cite: 5]. Komponennya meliputi PSM, Karang Taruna, Tagana, TKSK, Pelopor Perdamaian, Pensosmas, hingga pengurus Lembaga Kesejahteraan Sosial (LKS)[cite: 5].
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Step 4 -->
-                <div class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex flex-col justify-between">
-                    <div>
-                        <div class="w-8 h-8 rounded bg-kemensos-blue text-white font-bold text-sm flex items-center justify-center mb-4">4</div>
-                        <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">Unduh Sertifikat</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Mengisi kuesioner evaluasi penyelenggaraan untuk membuka akses pengunduhan sertifikat resmi.</p>
+                <!-- Pillar 4 -->
+                <div class="p-6 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 font-bold flex items-center justify-center flex-shrink-0 text-xl">
+                        <i class="fas fa-bullhorn"></i>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400" alt="Unduh Sertifikat" class="w-full h-24 object-cover rounded border border-slate-200 dark:border-slate-700 opacity-90">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white">Penyuluh Sosial</h3>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">Aparatur Sipil Negara (ASN)</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Seseorang (ASN) yang mempunyai tugas, tanggung jawab, dan wewenang untuk melaksanakan kegiatan penyuluhan serta pengembangan di bidang kesejahteraan sosial kepada PPKS, potensi dan sumber kesejahteraan sosial (PSKS), maupun masyarakat luas[cite: 5].
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (MILESTONE - Tahapan Pembelajaran Moodle) -->
+    <section id="fitur" class="py-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-14 text-center max-w-3xl mx-auto">
+                <span class="text-xs font-bold tracking-wider text-kemensos-blue dark:text-blue-400 uppercase">Alur Pembelajaran LMS</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Tahapan Kegiatan Pelatihan e-Learning</h2>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+                    Tahapan pembelajaran terstruktur yang harus diselesaikan oleh setiap peserta secara berurutan pada portal e-Learning.
+                </p>
+            </div>
+
+            <!-- Milestone Line Wrapper -->
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Vertical Line (Mobile & Desktop) -->
+                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-slate-200 dark:bg-slate-800 -translate-x-1/2 rounded-full"></div>
+
+                <div class="space-y-12">
+                    
+                    <!-- Milestone Step 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <!-- Node Circle -->
+                        <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-kemensos-blue text-white font-bold flex items-center justify-center border-4 border-white dark:border-slate-900 shadow-md z-10 text-sm">
+                            1
+                        </div>
+                        <!-- Content Left -->
+                        <div class="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12 md:text-right">
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-300 transition-colors">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-kemensos-blue dark:bg-blue-900/50 dark:text-blue-300 inline-block mb-2">Tahap 1 • Persiapan</span>
+                                <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">Orientasi & Pre-Test</h3>
+                                <div class="text-xs text-slate-600 dark:text-slate-400 space-y-2 text-left md:text-right leading-relaxed">
+                                    <p><strong>Orientasi & Pengarahan Teknis:</strong> Peserta mengakses petunjuk umum diklat, komitmen belajar, jadwal kegiatan, dan berkenalan melalui forum pengumuman atau diskusi (<em>Announcements/Forum</em>).</p>
+                                    <p><strong>Pengerjaan Pre-Test:</strong> Mengerjakan ujian awal (<em>Quiz</em>) untuk mengukur pemahaman dasar sebelum mempelajari modul. Pembatasan akses (<em>Restricted Access</em>) biasanya diterapkan sehingga modul materi belum terbuka sebelum pre-test diselesaikan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+
+                    <!-- Milestone Step 2 -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <!-- Node Circle -->
+                        <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-kemensos-blue text-white font-bold flex items-center justify-center border-4 border-white dark:border-slate-900 shadow-md z-10 text-sm">
+                            2
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <!-- Content Right -->
+                        <div class="w-full md:w-1/2 pl-16 md:pl-12">
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-300 transition-colors">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-kemensos-blue dark:bg-blue-900/50 dark:text-blue-300 inline-block mb-2">Tahap 2 • Inti Diklat</span>
+                                <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">Eksplorasi & Pembelajaran Modul</h3>
+                                <div class="text-xs text-slate-600 dark:text-slate-400 space-y-2 text-left leading-relaxed">
+                                    <p><strong>Studi Mandiri (Self-Paced Learning):</strong> Peserta mempelajari modul interaktif dalam berbagai format seperti materi teks/PDF (<em>File/Page</em>), video pembelajaran (<em>URL/Embedded Video</em>), maupun slide presentasi SCORM/H5P.</p>
+                                    <p><strong>Konfirmasi Penyelesaian:</strong> Setiap aktivitas dilengkapi fitur pelacakan (<em>Activity Completion</em>). Peserta harus menandai atau memenuhi kriteria ketuntasan (misal: menonton video hingga selesai atau membaca dokumen) untuk membuka materi bab berikutnya.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone Step 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <!-- Node Circle -->
+                        <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-kemensos-blue text-white font-bold flex items-center justify-center border-4 border-white dark:border-slate-900 shadow-md z-10 text-sm">
+                            3
+                        </div>
+                        <!-- Content Left -->
+                        <div class="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12 md:text-right">
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-300 transition-colors">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-kemensos-blue dark:bg-blue-900/50 dark:text-blue-300 inline-block mb-2">Tahap 3 • Kolaborasi</span>
+                                <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">Interaksi & Collaborative Learning</h3>
+                                <div class="text-xs text-slate-600 dark:text-slate-400 space-y-2 text-left md:text-right leading-relaxed">
+                                    <p><strong>Diskusi Interaktif:</strong> Peserta berpartisipasi dalam ruang forum diskusi (<em>Forum</em>) atau sesi pemantapan langsung untuk mendiskusikan studi kasus pelayanan sosial.</p>
+                                    <p><strong>Pengumpulan Tugas (Assignment):</strong> Peserta mengunggah hasil lembar kerja, laporan praktik, atau portofolio intervensi sosial melalui fitur pengumpulan tugas untuk dinilai oleh pengajar/instruktur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+
+                    <!-- Milestone Step 4 -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <!-- Node Circle -->
+                        <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-kemensos-blue text-white font-bold flex items-center justify-center border-4 border-white dark:border-slate-900 shadow-md z-10 text-sm">
+                            4
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <!-- Content Right -->
+                        <div class="w-full md:w-1/2 pl-16 md:pl-12">
+                            <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-300 transition-colors">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase bg-blue-100 text-kemensos-blue dark:bg-blue-900/50 dark:text-blue-300 inline-block mb-2">Tahap 4 • Penilaian</span>
+                                <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">Evaluasi & Post-Test</h3>
+                                <div class="text-xs text-slate-600 dark:text-slate-400 space-y-2 text-left leading-relaxed">
+                                    <p><strong>Kuis & Post-Test:</strong> Mengerjakan kuis evaluasi per modul serta Post-Test akhir bab (<em>Quiz</em>) untuk mengukur peningkatan kapasitas.</p>
+                                    <p><strong>Syarat Kriteria Ketuntasan Minimal (KKM):</strong> Moodle akan menghitung nilai otomatis. Jika peserta memenuhi batas nilai kelulusan, sistem akan membuka tahapan akhir secara otomatis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone Step 5 -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <!-- Node Circle Gold/Green for Completion -->
+                        <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center border-4 border-white dark:border-slate-900 shadow-md z-10 text-sm">
+                            5
+                        </div>
+                        <!-- Content Left -->
+                        <div class="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12 md:text-right">
+                            <div class="bg-emerald-50/50 dark:bg-emerald-950/30 p-6 rounded-xl border border-emerald-200 dark:border-emerald-800/50 shadow-sm">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-300 inline-block mb-2">Tahap Akhir • Kelulusan</span>
+                                <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">Evaluasi Penyelenggaraan & Unduh Sertifikat</h3>
+                                <div class="text-xs text-slate-600 dark:text-slate-400 space-y-2 text-left md:text-right leading-relaxed">
+                                    <p><strong>Kuesioner Feedback:</strong> Peserta mengisi survei evaluasi penyelenggaraan diklat (<em>Feedback/Survey</em>). Fitur ini umumnya diset wajib sebagai prasyarat (<em>Completion Requirement</em>) untuk penerbitan sertifikat.</p>
+                                    <p><strong>Penerbitan Sertifikat Otomatis:</strong> Setelah seluruh kriteria <em>Activity Completion</em> terpenuhi dan kuesioner diisi, sertifikat digital (<em>Custom Certificate</em>) dengan kode verifikasi resmi dapat langsung diunduh oleh peserta.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -240,7 +402,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12">
                 <span class="text-xs font-bold tracking-wider text-kemensos-blue dark:text-blue-400 uppercase">Katalog Program</span>
-                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Modul Pelatihan Peningkatan Kapasitas SDM PKH</h2>
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Modul Pelatihan Peningkatan Kapasitas SDM Kesejahteraan Sosial</h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
@@ -319,7 +481,7 @@
                     </p>
                 </div>
                 <div class="md:text-right">
-                    <p class="text-slate-400">Dikelola bersama oleh Pusdatin Kesos & BBPPKS Regional I-VI</p>
+                    <p class="text-slate-400">Dikelola bersama oleh Pusdatin Kesos dan Pusdiklatbangprof</p>
                 </div>
             </div>
             <div class="text-center text-slate-500">
