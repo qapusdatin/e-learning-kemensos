@@ -153,37 +153,50 @@
                     </div>
                 </div>
 
-                <!-- Hero Right: Gambar Ilustrasi & Preview Frame -->
+                <!-- Hero Right: Gambar Ilustrasi Slider & Preview Frame -->
                 <div class="lg:col-span-6">
                     <div class="relative rounded-xl overflow-hidden border border-white/20 bg-slate-900/80 shadow-2xl">
-                        <!-- Header Frame Mockup -->
+                        <!-- Header Frame Mockup (Clickable untuk next slide) -->
                         <div class="px-4 py-3 bg-slate-950/80 border-b border-white/10 flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                            
+                            <!-- Area Tombol Ganti Slide -->
+                            <div class="flex items-center gap-2" id="slider-dots">
+                                <button onclick="goToSlide(0)" class="w-3 h-3 rounded-full bg-blue-500 hover:bg-blue-400 transition-colors" title="Slide 1"></button>
+                                <button onclick="goToSlide(1)" class="w-3 h-3 rounded-full bg-slate-600 hover:bg-slate-400 transition-colors" title="Slide 2"></button>
+                                <button onclick="goToSlide(2)" class="w-3 h-3 rounded-full bg-slate-600 hover:bg-slate-400 transition-colors" title="Slide 3"></button>
+                                <button onclick="goToSlide(3)" class="w-3 h-3 rounded-full bg-slate-600 hover:bg-slate-400 transition-colors" title="Slide 4"></button>
+                                <button onclick="goToSlide(4)" class="w-3 h-3 rounded-full bg-slate-600 hover:bg-slate-400 transition-colors" title="Slide 5"></button>
                             </div>
+                            
                             <span class="text-[11px] text-slate-400 font-mono">e-learning.kemensos.go.id</span>
                         </div>
-                        <!-- Gambar Ilustrasi Utama -->
-                        <div class="relative aspect-[16/10] overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1000" 
-                                 alt="Ilustrasi Diklat Pembelajaran Digital Kemensos" 
-                                 class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 opacity-90">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        
+                        <!-- Area Slider Gambar -->
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <!-- Slider 1 -->
+                            <img src="slider/1.jpeg" alt="Ilustrasi Slide 1" class="slide-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out opacity-90 z-10">
+                            <!-- Slider 2 -->
+                            <img src="slider/2.jpeg" alt="Ilustrasi Slide 2" class="slide-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out opacity-0 z-0">
+                            <!-- Slider 3 -->
+                            <img src="slider/3.jpeg" alt="Ilustrasi Slide 3" class="slide-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out opacity-0 z-0">
+                            <!-- Slider 4 -->
+                            <img src="slider/4.jpeg" alt="Ilustrasi Slide 4" class="slide-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out opacity-0 z-0">
+                            <!-- Slider 5 -->
+                            <img src="slider/5.jpeg" alt="Ilustrasi Slide 5" class="slide-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out opacity-0 z-0">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none z-20"></div>
                             
                             <!-- Overlay Label dengan Logo Resmi (Lokal Direktori) -->
-                            <div class="absolute bottom-4 left-4 right-4 p-3 rounded-lg bg-slate-900/90 backdrop-blur border border-white/10 flex items-center justify-between">
+                            <div class="absolute bottom-4 left-4 right-4 p-3 rounded-lg bg-slate-900/90 backdrop-blur border border-white/10 flex items-center justify-between z-30">
                                 <div class="flex items-center gap-3">
                                     <img src="assets/logo-kemensos.svg" 
                                          alt="Logo Kemensos" 
                                          class="w-7 h-7 object-contain">
                                     <div>
-                                        <p class="text-xs font-bold text-white">Sasaran ASN & Non-ASN</p>
-                                        <p class="text-[10px] text-slate-400">Standar Permensos No. 7 Tahun 2026</p>
+                                        <p id="slider-title" class="text-xs font-bold text-white transition-opacity duration-300">Manajemen Kasus dan Asesmen Psikososial Berbasis Digital</p>
+                                        <p id="slider-subtitle" class="text-[10px] text-slate-400 transition-opacity duration-300">BBPPKS Bandung</p>
                                     </div>
                                 </div>
-                                <span class="px-2.5 py-1 rounded bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-[10px] font-bold">Resmi</span>
                             </div>
                         </div>
                     </div>
@@ -490,8 +503,9 @@
         </div>
     </footer>
 
-    <!-- Logic Dark/Light Mode -->
+    <!-- Logic Dark/Light Mode & Slider -->
     <script>
+        // Dark/Light Mode logic
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
 
@@ -505,6 +519,86 @@
             html.classList.toggle('dark');
             localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
         });
+
+        // Data Judul & Lokasi/Unit Penyelenggara Slider
+        const sliderData = [
+            {
+                title: "Manajemen Kasus dan Asesmen Psikososial Berbasis Digital",
+                subtitle: "BBPPKS Bandung"
+            },
+            {
+                title: "Verifikasi dan Validasi Data Kesejahteraan Sosial (DTENS) serta Perlindungan Data Pribadi",
+                subtitle: "Pusdiklatbangprof"
+            },
+            {
+                title: "Pertolongan Pertama Psikososial (PFA) dan Penanganan Isu Kesehatan Mental di Era Digital",
+                subtitle: "BBPPKS Jayapura"
+            },
+            {
+                title: "Pemberdayaan Sosial Inklusif bagi Penyandang Disabilitas dan Kelompok Rentan",
+                subtitle: "BBPPKS Yogyakarta"
+            },
+            {
+                title: "Persiapan Uji Kompetensi dan Portofolio SDM Kesos (Menuju Sertifikasi LSP)",
+                subtitle: "BBPPKS Padang"
+            }
+        ];
+
+        // Image Slider logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide-img');
+        const dots = document.querySelectorAll('#slider-dots button');
+        const titleElement = document.getElementById('slider-title');
+        const subtitleElement = document.getElementById('slider-subtitle');
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        function updateSlider(newIndex) {
+            if (totalSlides === 0) return;
+            
+            // Efek transisi pada teks
+            titleElement.classList.add('opacity-0');
+            subtitleElement.classList.add('opacity-0');
+            
+            setTimeout(() => {
+                // Sembunyikan slide & reset dot saat ini
+                slides[currentSlide].classList.remove('opacity-90', 'z-10');
+                slides[currentSlide].classList.add('opacity-0', 'z-0');
+                dots[currentSlide].classList.remove('bg-blue-500');
+                dots[currentSlide].classList.add('bg-slate-600');
+                
+                // Update index
+                currentSlide = newIndex;
+                
+                // Ubah Teks Judul & Subtitle
+                titleElement.textContent = sliderData[currentSlide].title;
+                subtitleElement.textContent = sliderData[currentSlide].subtitle;
+                
+                // Tampilkan slide & aktifkan dot baru
+                slides[currentSlide].classList.remove('opacity-0', 'z-0');
+                slides[currentSlide].classList.add('opacity-90', 'z-10');
+                dots[currentSlide].classList.remove('bg-slate-600');
+                dots[currentSlide].classList.add('bg-blue-500');
+                
+                // Kembalikan opacity teks
+                titleElement.classList.remove('opacity-0');
+                subtitleElement.classList.remove('opacity-0');
+            }, 300); // Sinkronisasi dengan durasi transisi teks
+        }
+
+        function nextSlide() {
+            updateSlider((currentSlide + 1) % totalSlides);
+        }
+
+        function goToSlide(index) {
+            updateSlider(index);
+            // Reset interval agar tidak otomatis melompat setelah kita mengklik tombol
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 4000);
+        }
+
+        // Auto-play slider setiap 4 detik
+        slideInterval = setInterval(nextSlide, 4000);
     </script>
 </body>
 </html>
